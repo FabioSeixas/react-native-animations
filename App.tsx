@@ -9,9 +9,17 @@ const Drawer = createDrawerNavigator()
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName="FirstExample">
-        <Drawer.Screen name="FirstExample" component={FirstExample} />
-        <Drawer.Screen name="SecondExample" component={SecondExample} />
+      <Drawer.Navigator initialRouteName="FirstExample" >
+        <Drawer.Screen name="FirstExample" component={FirstExample} options={{
+          gestureHandlerProps: {
+            enabled: false
+          }
+        }} />
+        <Drawer.Screen name="SecondExample" component={SecondExample} options={{
+          gestureHandlerProps: {
+            enabled: false
+          }
+        }} />
       </Drawer.Navigator>
     </NavigationContainer>
   )

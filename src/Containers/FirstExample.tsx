@@ -17,6 +17,7 @@ const FirstExample = ({ navigation }) => {
   const translateX = useSharedValue(0)
 
   const scrollHandler = useAnimatedScrollHandler((event) => {
+    console.log('event: ', event)
     translateX.value = event.contentOffset.x
   })
 
@@ -30,7 +31,8 @@ const FirstExample = ({ navigation }) => {
         style={[styles.container]}
         pagingEnabled
       >
-        {WORDS.map((word, index) => <Page title={word} key={index} index={index} translateX={translateX} />)}
+        {WORDS.map((word, index) => <Page
+          title={word} key={index} index={index} translateX={translateX} />)}
       </Animated.ScrollView>
     </>
   );
